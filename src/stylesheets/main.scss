@@ -1,0 +1,41 @@
+.recipeContainer {
+	text-align:left;
+	background-color: lightgrey;
+	padding: 1%;
+	margin: 0.5%;
+	display: inline-block;
+	border-radius: 5px;
+	@media (max-width: 768px){
+		padding-left: 5%;
+		padding-right: 2%;
+	}
+}
+
+
+.recipeContainer .buttonContainer {	
+	width: 20%;
+	display: inline;	
+
+}
+
+
+.recipeContainer{
+	color: black;	
+}
+
+.rowList {
+	padding-left: 10%;
+	@media (max-width: 768px){
+		padding-left: 10%;
+	}
+}
+
+.recipeList button {
+	margin: 1%;
+}
+
+
+
+.recipeContainer button {
+	margin:1%;
+}
