@@ -72,12 +72,22 @@ var RecipeAdd = React.createClass ({
 
   	var recipeNodes = sortedData.map(function(recipe){
 			return (				
-				<div className="recipeContainer" key={recipe.id}>
-					<h1>{recipe.name}</h1>
-					<Recipe recipe={recipe.ingredients} ></Recipe>
-					<div className="buttonContainer" >
-					<Button className="deleteButton" onClick={this.props.deleteRecipe.bind(null, recipe)} >Delete</Button>
-					<Button id="editButton" className="editButton" onClick={this.edit.bind(null, recipe)}>Edit</Button>
+				<div className="recipeContainer panel panel-default" key={recipe.id}>
+					<div class="panel-heading">
+						<h1 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href={"#" + recipe.id}>{recipe.name}</a>
+						</h1>
+					</div>
+					<div id={recipe.id} className="panel-collapse collapse">
+						<div class="panel-body">
+							
+							<Recipe recipe={recipe.ingredients} ></Recipe>
+							<div className="buttonContainer" >
+								<Button className="deleteButton" onClick={this.props.deleteRecipe.bind(null, recipe)} >Delete</Button>
+								<Button id="editButton" className="editButton" onClick={this.edit.bind(null, recipe)}>Edit</Button>
+							</div>
+							
+						</div>
 					</div>
 				</div>
 			);
@@ -121,6 +131,7 @@ var RecipeAdd = React.createClass ({
 var RecipeList = React.createClass ({
 	
 	getInitialState: function() {
+		$('.collapse').collapse("hide");
 		return JSON.parse(localStorage.getItem('recipeList') || '{"data":[]}')		
 		
 	},
@@ -278,7 +289,7 @@ var RecipeList = React.createClass ({
 		
 		return (
 			<div>			
-				<div className="RecipeList">
+				<div className="RecipeList panel-group" id="accordion">
 					<RecipeAdd data={this.state.data} deleteRecipe={this.deleteRecipe} editRecipe={this.editRecipe} saveForm={this.save} recipeName={this.state.recipeName} recipeIngredients={this.state.recipeIngredients}/>
 				</div>			
 			</div>
@@ -289,3 +300,4 @@ var RecipeList = React.createClass ({
 
 
 render(<RecipeList/>, document.getElementById('app') );
+

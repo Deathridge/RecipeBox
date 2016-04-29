@@ -2,7 +2,7 @@
 	text-align:left;
 	background-color: lightgrey;
 	padding: 1%;
-	margin: 0.5%;
+	margin: 1%;
 	display: inline-block;
 	border-radius: 5px;
 	@media (max-width: 768px){
@@ -11,6 +11,9 @@
 	}
 }
 
+.RecipeList .panel{
+	background-color: lightgrey;
+}
 
 .recipeContainer .buttonContainer {	
 	width: 20%;
