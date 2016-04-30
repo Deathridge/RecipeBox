@@ -1,3 +1,6 @@
+html body {
+	background-color: grey;
+}
 .recipeContainer {
 	text-align:left;
 	background-color: lightgrey;
@@ -21,6 +24,9 @@
 
 }
 
+.recipeAdd {
+	text-align:center;
+}
 
 .recipeContainer{
 	color: black;	

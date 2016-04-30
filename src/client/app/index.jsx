@@ -99,7 +99,7 @@ var RecipeAdd = React.createClass ({
       <div>
       {recipeNodes}
       </div>
-      <div>
+      <div className="recipeAdd">
         <Button
           bsStyle="primary"
           bsSize="large"
@@ -175,8 +175,39 @@ var RecipeList = React.createClass ({
                 "name": "kosher salt",
                 "type": "Baking"
             }
-        ]}
-        ];        
+        ]},
+        
+	    {
+	    	"id": "3",
+	        "name": "Curried Lentils and Rice",
+	        "ingredients": [
+	            {
+	                "quantity": "1 quart",
+	                "name": "beef broth",
+	                "type": "Misc"
+	            },
+	            {
+	                "quantity": "1 cup",
+	                "name": "dried green lentils",
+	                "type": "Misc"
+	            },
+	            {
+	                "quantity": "1/2 cup",
+	                "name": "basmati rice",
+	                "type": "Misc"
+	            },
+	            {
+	                "quantity": "1 tsp",
+	                "name": "curry powder",
+	                "type": "Condiments"
+	            },
+	            {
+	                "quantity": "1 tsp",
+	                "name": "salt",
+	                "type": "Condiments"
+	            }
+	        ]
+	    }];        
         
 		if(JSON.parse(localStorage.getItem('recipeList'))){
 			this.setState({
